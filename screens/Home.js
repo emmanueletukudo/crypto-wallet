@@ -22,6 +22,7 @@ const Home = ({ navigation }) => {
                 style = {{
                     width: 180,
                     paddingVertical: SIZES.padding,
+                    paddingHorizontal: SIZES.padding,
                     marginLeft: index == 0 ? SIZES.padding : 0,
                     marginRight: SIZES.radius,
                     borderRadius: 10,
@@ -39,6 +40,7 @@ const Home = ({ navigation }) => {
                                 marginTop: 5,
                                 width: 25, 
                                 height: 25,
+                            
                             }}
                         />
                     </View>
@@ -73,7 +75,7 @@ const Home = ({ navigation }) => {
                 {/* Header */}
                 <View
                     style = {{
-                        marginTop: SIZES.padding *2,
+                        marginTop: SIZES.padding * 2,
                         width: "100%",
                         alignItems: "flex-end",
                         paddingHorizontal: SIZES.padding,
@@ -115,7 +117,7 @@ const Home = ({ navigation }) => {
                 <View 
                 style = {{
                     position: "absolute",
-                    marginBottom: -30,
+                    bottom: "-30%",
                 }}
                 >
                     <Text style={{marginLeft: SIZES.padding, color: COLORS.white, ...FONTS.h2}}>
