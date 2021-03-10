@@ -14,7 +14,8 @@ import { COLORS, FONTS, icons, images } from "../constants"
 
 const Tab = createBottomTabNavigator()
 const TouchBarCustomButton = ({children, onPress}) => {
-    <TouchableOpacity
+    return(
+        <TouchableOpacity
     style = {{
         top: -30,
         justifyContent: "center",
@@ -34,6 +35,7 @@ const TouchBarCustomButton = ({children, onPress}) => {
             {children}
         </LinearGradient>
     </TouchableOpacity>
+    )
 }
 const Tabs = () => {
     return (
@@ -118,11 +120,11 @@ const Tabs = () => {
                         >
                         </Image>
                     ),
-                    tabBarButton: (props) => {
+                    tabBarButton: (props) => (
                         <TouchBarCustomButton
                             {...props}
                         />
-                    }
+                    )
                 }}
             />
             <Tab.Screen

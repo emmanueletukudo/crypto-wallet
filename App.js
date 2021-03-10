@@ -11,9 +11,8 @@ const Stack = createStackNavigator();
 const App = () => {
 
   React.useEffect(() => {
-
     SplashScreen.hide();
-  })
+  });
   
   return (
     <NavigationContainer>
