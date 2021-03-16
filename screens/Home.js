@@ -15,6 +15,7 @@ import {PriceAlert} from "../components";
 
 const Home = ({ navigation }) => {
     const [trending, setTrending] = React.useState(dummyData.trendingCurrencies);
+    const [transactionHistory, setTransactionHistory] = React.useState(dummyData.transactionHistory);
 
     function renderHeader() {
         const renderItem = ({item, index}) => (
@@ -145,11 +146,51 @@ const Home = ({ navigation }) => {
             <PriceAlert />
         )
     }
+    function renderNotice(){
+        <View
+            style={{
+                marginTop: SIZES.padding,
+                marginHorizontal: SIZES.padding,
+                padding: 20,
+                borderRadius: SIZES.padding,
+                backgroundColor: COLORS.secondary,
+                ...styles.shadow
+            }}
+        >
+            <Text style={{color: COLORS.white, ...FONTS.h3}}>Investing Safty</Text>
+            <Text style={{ color: COLORS.white, ...FONTS.body4, marginTop: SIZES.base, lineHeight: 18}}>It's very dificult to time an investment,
+                especially when the market is volotile. Learn how to
+                use dollar cost average to your advantage,
+            </Text>
+            <TouchableOpacity
+            style={{
+                marginTop: SIZES.base,
+            }}
+                onPress = {() => console.log("Learn more")}
+            >
+                <Text style={{
+                    textDecorationLine: "underline", 
+                    color: COLORS.green,
+                }}>Learn More</Text>
+            </TouchableOpacity>
+        </View>
+    }
+
+    function renderTransactionHistory(){
+        return(
+            <transactionHistory
+                customContainerStyle = {...styles.shadow}
+                history = {transactionHistory}
+            />
+        )
+    }
     return (
         <ScrollView>
             <View style = {{ flex: 1, paddingBottom: 130, }} >
                 {renderHeader()}
                 {renderAlert()}
+                {renderNotice()}
+                {renderTransactionHistory()}
             </View>
         </ScrollView>
     )
