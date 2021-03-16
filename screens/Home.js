@@ -9,9 +9,9 @@ import {
     Image,
     ImageBackground,
 } from 'react-native';
-import { color } from 'react-native-reanimated';
 
 import {dummyData, icons, images, FONTS, COLORS, SIZES} from "../constants";
+import {PriceAlert} from "../components";
 
 const Home = ({ navigation }) => {
     const [trending, setTrending] = React.useState(dummyData.trendingCurrencies);
@@ -139,10 +139,17 @@ const Home = ({ navigation }) => {
             </View>
         )
     }
+
+    function renderAlert(){
+        return(
+            <PriceAlert />
+        )
+    }
     return (
         <ScrollView>
             <View style = {{ flex: 1, paddingBottom: 130, }} >
                 {renderHeader()}
+                {renderAlert()}
             </View>
         </ScrollView>
     )
