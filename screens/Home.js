@@ -147,7 +147,8 @@ const Home = ({ navigation }) => {
         )
     }
     function renderNotice(){
-        <View
+        return(
+            <View
             style={{
                 marginTop: SIZES.padding,
                 marginHorizontal: SIZES.padding,
@@ -174,23 +175,15 @@ const Home = ({ navigation }) => {
                 }}>Learn More</Text>
             </TouchableOpacity>
         </View>
-    }
-
-    function renderTransactionHistory(){
-        return(
-            <transactionHistory
-                customContainerStyle = {...styles.shadow}
-                history = {transactionHistory}
-            />
         )
     }
+
     return (
         <ScrollView>
             <View style = {{ flex: 1, paddingBottom: 130, }} >
                 {renderHeader()}
                 {renderAlert()}
                 {renderNotice()}
-                {renderTransactionHistory()}
             </View>
         </ScrollView>
     )
